@@ -81,4 +81,3 @@ __webpack_require__(0);
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=ui-tab-bar.js.map

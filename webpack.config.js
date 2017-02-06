@@ -4,7 +4,7 @@ var path = require('path'),
 
 module.exports = function (env) {
     var config = {
-        devtool: '#source-map',
+        devtool: '#hidden-source-map',
 
         entry: {
             'ui-tab-bar': path.join(__dirname, 'demo')
