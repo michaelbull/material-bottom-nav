@@ -5,8 +5,8 @@
   "main": "index.js",
   "style": "ui-tab-bar.scss",
   "scripts": {
-    "start": "webpack-dev-server --inline --hot --open",
-    "build": "webpack"
+    "start": "webpack-dev-server --env.dev --inline --hot --open",
+    "build": "webpack --env.prod"
   },
   "repository": {
     "type": "git",

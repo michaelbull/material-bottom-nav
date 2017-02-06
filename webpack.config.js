@@ -2,67 +2,84 @@ var path = require('path'),
     webpack = require('webpack'),
     ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-module.exports = {
-    devtool: '#source-map',
+module.exports = function (env) {
+    var config = {
+        devtool: '#source-map',
 
-    entry: {
-        'ui-tab-bar': './index.js'
-    },
+        entry: {
+            'ui-tab-bar': path.join(__dirname, 'demo')
+        },
 
-    output: {
-        path: path.join(__dirname, 'dist'),
-        publicPath: '/dist/',
-        filename: '[name].js'
-    },
+        output: {
+            path: path.join(__dirname, 'dist'),
+            publicPath: 'dist/',
+            filename: '[name].js'
+        },
 
-    resolve: {
-        extensions: [
-            '.webpack.js',
-            '.web.js',
-            '.js',
-            '.jsx',
-            '.ts',
-            '.tsx'
-        ]
-    },
+        resolve: {
+            extensions: [
+                '.webpack.js',
+                '.web.js',
+                '.js',
+                '.jsx',
+                '.ts',
+                '.tsx'
+            ]
+        },
 
-    module: {
-        rules: [
-            {
-                test: /\.scss$/,
-                loader: ExtractTextPlugin.extract({
-                    fallbackLoader: 'style-loader',
-                    loader: [
-                        { loader: 'css-loader?sourceMap&importLoaders=1' },
-                        { loader: 'postcss-loader' },
-                        { loader: 'sass-loader?sourceMap' }
+        module: {
+            rules: []
+        },
+
+        devServer: {
+            stats: 'errors-only'
+        },
+
+        plugins: [
+            new webpack.LoaderOptionsPlugin({
+                options: {
+                    context: __dirname,
+                    output: {
+                        path: './'
+                    },
+                    postcss: [
+                        require('cssnano')({
+                            autoprefixer: {
+                                add: true,
+                                remove: false
+                            }
+                        })
                     ]
-                })
-            }
+                }
+            })
         ]
-    },
+    };
 
-    devServer: {
-        stats: 'errors-only'
-    },
+    if (env.prod) {
+        config.plugins.push(new ExtractTextPlugin('[name].css'));
 
-    plugins: [
-        new webpack.LoaderOptionsPlugin({
-            options: {
-                context: __dirname,
-                output: {
-                    path: './'
-                },
-                postcss: [
-                    require('cssnano')({
-                        autoprefixer: {
-                            add: true,
-                            remove: false
-                        }
-                    })
+        config.module.rules.push({
+            test: /\.scss$/,
+            loader: ExtractTextPlugin.extract({
+                fallbackLoader: 'style-loader',
+                loader: [
+                    { loader: 'css-loader?sourceMap&importLoaders=1' },
+                    { loader: 'postcss-loader' },
+                    { loader: 'sass-loader?sourceMap' }
                 ]
-            }
-        }),
-        new ExtractTextPlugin('[name].css')
-    ]
+            })
+        });
+    } else {
+        config.module.rules.push({
+            test: /\.scss$/,
+            use: [
+                'style-loader',
+                'css-loader?sourceMap&importLoaders=1',
+                'postcss-loader',
+                'sass-loader?sourceMap'
+            ]
+        });
+    }
+
+    return config;
 };

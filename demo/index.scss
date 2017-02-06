@@ -1,0 +1,5 @@
+@import '../ui-tab-bar';
+
+.tab-bar {
+  @include tab-bar();
+}

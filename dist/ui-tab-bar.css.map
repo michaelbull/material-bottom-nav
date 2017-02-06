@@ -1,1 +1,1 @@
-{"version":3,"sources":["webpack:///webpack:///ui-tab-bar.scss"],"names":[],"mappings":"AAEA,GACE,SAHO","file":"ui-tab-bar.css","sourcesContent":["$red: red;\n\nh1 {\n  color: $red;\n}\n\n\n\n// WEBPACK FOOTER //\n// webpack:///ui-tab-bar.scss"],"sourceRoot":""}
+{"version":3,"sources":[],"names":[],"mappings":"","file":"ui-tab-bar.css","sourceRoot":""}

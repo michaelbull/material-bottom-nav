@@ -1,5 +1,5 @@
-$red: red;
+$tab-active-color: hsl(207, 90%, 54%) !default;
 
-h1 {
-  color: $red;
+@mixin tab-bar() {
+
 }
