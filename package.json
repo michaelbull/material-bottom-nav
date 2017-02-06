@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "ui-tab-bar",
   "main": "index.js",
+  "style": "ui-tab-bar.scss",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --inline --hot --open",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -25,5 +27,16 @@
   "bugs": {
     "url": "https://github.com/michaelbull/ui-tab-bar/issues"
   },
-  "homepage": "https://github.com/michaelbull/ui-tab-bar#readme"
+  "homepage": "https://github.com/michaelbull/ui-tab-bar#readme",
+  "devDependencies": {
+    "css-loader": "0.26.1",
+    "cssnano": "3.10.0",
+    "extract-text-webpack-plugin": "2.0.0-beta.5",
+    "node-sass": "4.5.0",
+    "postcss-loader": "1.2.2",
+    "sass-loader": "4.1.1",
+    "style-loader": "0.13.1",
+    "webpack": "2.2.1",
+    "webpack-dev-server": "2.3.0"
+  }
 }
