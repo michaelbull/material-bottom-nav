@@ -1,0 +1,29 @@
+{
+  "name": "ui-tab-bar",
+  "version": "1.0.0",
+  "description": "ui-tab-bar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelbull/ui-tab-bar.git"
+  },
+  "keywords": [
+    "ui",
+    "tab",
+    "bar",
+    "navigation",
+    "menu"
+  ],
+  "author": {
+    "name": "Michael Bull",
+    "url": "https://www.michael-bull.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaelbull/ui-tab-bar/issues"
+  },
+  "homepage": "https://github.com/michaelbull/ui-tab-bar#readme"
+}
