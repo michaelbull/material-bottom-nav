@@ -1,5 +1,71 @@
-@import '../ui-tab-bar';
+@import '../bottom-nav';
 
-.tab-bar {
-  @include tab-bar();
+html {
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: normal;
+  line-height: 1.75;
+
+  color: rgba(0, 0, 0, 0.87);
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 600px;
+  margin: 6em auto;
+
+  padding: {
+    left: 1em;
+    right: 1em;
+  }
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+h1,
+h2,
+.subtitle {
+  margin-top: 1.5em;
+  margin-right: 0;
+  margin-bottom: 0.3em;
+  margin-left: -0.07em;
+
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+.subtitle {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+ul, ol {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.bottom-nav {
+  @include bottom-nav();
+
+  //@media screen and (min-width: 768px) {
+  //  @include tab-bar-desktop();
+  //}
 }

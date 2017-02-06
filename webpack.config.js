@@ -7,7 +7,7 @@ module.exports = function (env) {
         devtool: '#hidden-source-map',
 
         entry: {
-            'ui-tab-bar': path.join(__dirname, 'demo')
+            'bottom-nav': path.join(__dirname, 'demo')
         },
 
         output: {
