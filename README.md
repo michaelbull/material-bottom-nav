@@ -56,9 +56,9 @@ to the [“Block Element Modifier” methodology][bem]:
   - The container spanning the page's full width.
 - `.bottom-nav__actions`
   - A [flexbox][flexbox] wrapper that contains all of the navigation actions.
-- `.bottom-nav__item`
+- `.bottom-nav__action`
   - An individual navigation action.
-- `.bottom-nav__item--active`
+- `.bottom-nav__action--active`
   - A modifier class to indiciate that the action is the currently active.
 - `.bottom-nav__icon`
   - The [SVG][svg] icon for an action.
@@ -104,7 +104,7 @@ configured by overriding the default variable values defined in
 importing the mixin file, for example:
 
 ```sass
-$bottom-nav-action-color-active: #2196F3; // change the color of active items to blue
+$bottom-nav-action-color-active: #2196F3; // change the color of active actions to blue
 $bottom-nav-action-horizontal-margin: 4px; // reduce the horizontal gutter between actions
 
 @import '~material-bottom-nav/bottom-nav';
