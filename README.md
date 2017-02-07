@@ -9,7 +9,7 @@ A running demonstration can be found [here][demo].
 <br />
 
 <p align="center">
-  <a href="#readme">
+  <a href="https://michaelbull.github.io/material-bottom-nav/">
     <img src="./preview.png" alt="Preview" />
   </a>
 </p>
