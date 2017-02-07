@@ -62,5 +62,5 @@ strong {
 }
 
 .bottom-nav {
-  @include bottom-nav();
+  @include bottom-nav($hide-inactive-labels: false);
 }
