@@ -7,7 +7,6 @@ style rules to any class, as shown in the [demo page's stylesheet][demo.scss].
 A running demonstration can be found [here][demo].
 
 <br />
-<br />
 
 <p align="center">
   <a href="https://michaelbull.github.io/material-bottom-nav/">
