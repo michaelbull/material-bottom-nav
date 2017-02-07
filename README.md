@@ -8,6 +8,18 @@ style rules to any class, as shown in the [demo page's stylesheet][demo.scss].
 
 A running demonstration can be found [here][demo].
 
+<br />
+
+<p align="center">
+  <a href="#readme">
+    <img src="./preview.png" alt="Preview" />
+  </a>
+</p>
+
+<br />
+<br />
+<br />
+
 ## Installation
 
 Install the package via npm:
