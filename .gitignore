@@ -19,6 +19,5 @@
 node_modules/
 npm-debug.log*
 
-# JavaScript Distribution
-dist/*.js
-dist/*.js.map
+# Distribution
+dist/

@@ -1,5 +1,6 @@
 var path = require('path'),
     webpack = require('webpack'),
+    HtmlWebpackPlugin = require('html-webpack-plugin'),
     ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = function (env) {
@@ -12,7 +13,6 @@ module.exports = function (env) {
 
         output: {
             path: path.join(__dirname, 'dist'),
-            publicPath: 'dist/',
             filename: '[name].js'
         },
 
@@ -28,7 +28,12 @@ module.exports = function (env) {
         },
 
         module: {
-            rules: []
+            rules: [
+                {
+                    test: /\.hbs$/,
+                    loader: 'handlebars-loader'
+                },
+            ]
         },
 
         devServer: {
@@ -51,6 +56,11 @@ module.exports = function (env) {
                         })
                     ]
                 }
+            }),
+            new HtmlWebpackPlugin({
+                title: 'Material Bottom Navigation',
+                filename: 'index.html',
+                template: path.join(__dirname, 'demo', 'index.hbs')
             })
         ]
     };
