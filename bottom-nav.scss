@@ -163,38 +163,3 @@ $bottom-nav-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
     }
   }
 }
-
-//@mixin tab-bar-desktop() {
-//  position: static;
-//  border-top: 0;
-//  background: transparent;
-//  max-width: $tab-bar-max-width-desktop;
-//
-//  margin: {
-//    left: auto;
-//    right: auto;
-//  }
-//
-//  &__tabs {
-//    margin: {
-//      left: 0;
-//      right: 0;
-//    }
-//
-//    max-width: none;
-//  }
-//
-//  &__tab {
-//    text-align: center;
-//  }
-//
-//  &__icon {
-//    display: inline;
-//    margin-bottom: 0;
-//  }
-//
-//  &__name {
-//    display: inline;
-//    font-size: 1rem;
-//  }
-//}

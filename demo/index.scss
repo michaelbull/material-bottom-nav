@@ -6,6 +6,7 @@ html {
 
 body {
   margin: 0;
+  overflow-y: scroll;
 
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -62,8 +63,4 @@ strong {
 
 .bottom-nav {
   @include bottom-nav();
-
-  //@media screen and (min-width: 768px) {
-  //  @include tab-bar-desktop();
-  //}
 }
