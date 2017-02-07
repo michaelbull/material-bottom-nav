@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="dist/bottom-nav.css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
   </head>
 
   <body>
@@ -36,12 +36,21 @@
     <main>
       <h1>Bottom Navigation</h1>
       <p class="subtitle">Bottom navigation bars make it easy to explore and switch between top-level views in a single tap.</p>
-      <p>Tapping on a bottom navigation icon takes you directly to the associated view or refreshes the currently active view.</p>
-      <p>Bottom navigation is primarily for use on mobile. To achieve a similar effect for desktop, use side navigation.</p>
+
       <h2>Usage</h2>
+      <p>Bottom navigation provides quick navigation between top-level views of an app. It is primarily designed for use on mobile.</p>
+
+      <p>Bottom navigation should be used for:</p>
       <ul>
-        <li>Three to five top-level destinations</li>
-        <li>Destinations requiring direct access</li>
+        <li>Three to five top-level destinations of similar importance </li>
+        <li>Destinations requiring direct access from anywhere in the app</li>
+      </ul>
+
+      <p>Style each action according to the following conditions:</p>
+      <ul>
+        <li>When the <strong>view is in focus</strong>, display that view’s icon and text label</li>
+        <li>When there are only <strong>three actions</strong>, display both icons and text labels at all times</li>
+        <li>If there are <strong>four or five actions</strong>, display inactive views as icons only</li>
       </ul>
     </main>
     <script type="text/javascript" src="dist/bottom-nav.js"></script>

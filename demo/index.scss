@@ -29,22 +29,20 @@ main {
   }
 }
 
-p {
+p, ol, ul {
   margin-top: 0;
   margin-bottom: 1.5rem;
 }
 
-h1,
-h2,
-.subtitle {
-  margin-top: 1.5em;
+h1, h2, .subtitle {
+  margin-top: 2em;
   margin-right: 0;
   margin-bottom: 0.3em;
   margin-left: -0.07em;
 
   font-weight: 400;
   letter-spacing: 0.02em;
-  line-height: 1.2;
+  line-height: 1;
 }
 
 h1 {
@@ -55,11 +53,11 @@ h1 {
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
+  line-height: 1.2;
 }
 
-ul, ol {
-  margin-top: 0;
-  margin-bottom: 1.5rem;
+strong {
+  font-weight: 500;
 }
 
 .bottom-nav {
