@@ -30,16 +30,13 @@ main {
   }
 }
 
-p, ol, ul {
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-}
-
 h1, h2, .subtitle {
-  margin-top: 2em;
-  margin-right: 0;
-  margin-bottom: 0.3em;
-  margin-left: -0.07em;
+  margin: {
+    top: 2em;
+    right: 0;
+    bottom: 0.3em;
+    left: -0.07em;
+  }
 
   font-weight: 400;
   letter-spacing: 0.02em;
@@ -51,10 +48,15 @@ h1 {
 }
 
 .subtitle {
-  margin-top: 0;
-  margin-bottom: 1.5rem;
   font-size: 1.5rem;
   line-height: 1.2;
+}
+
+p, ol, ul, .subtitle {
+  margin: {
+    top: 0;
+    bottom: 1.5rem;
+  }
 }
 
 strong {
@@ -63,4 +65,8 @@ strong {
 
 .bottom-nav {
   @include bottom-nav($hide-inactive-labels: false);
+}
+
+.no-labels-nav {
+  @include bottom-nav($hide-inactive-labels: true);
 }

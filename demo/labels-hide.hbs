@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <title>Material Bottom Navigation</title>
+  </head>
+
+  <body>
+    <nav class="no-labels-nav">
+      <a class="no-labels-nav__action" href="#">
+        <svg class="no-labels-nav__icon" viewBox="0 0 24 24">
+          <path d="M21,16H3V4H21M21,2H3C1.89,2 1,2.89 1,4V16A2,2 0 0,0 3,18H10V20H8V22H16V20H14V18H21A2,2 0 0,0 23,16V4C23,2.89 22.1,2 21,2Z"></path>
+        </svg>
+        <span class="no-labels-nav__label">Movies &amp; TV</span>
+      </a>
+
+      <a class="no-labels-nav__action no-labels-nav__action--active" href="#">
+        <svg class="no-labels-nav__icon" viewBox="0 0 24 24">
+          <path d="M12,3V12.26C11.5,12.09 11,12 10.5,12C8,12 6,14 6,16.5C6,19 8,21 10.5,21C13,21 15,19 15,16.5V6H19V3H12Z"></path>
+        </svg>
+        <span class="no-labels-nav__label">Music</span>
+      </a>
+
+      <a class="no-labels-nav__action" href="#">
+        <svg class="no-labels-nav__icon" viewBox="0 0 24 24">
+          <path d="M18,22A2,2 0 0,0 20,20V4C20,2.89 19.1,2 18,2H12V9L9.5,7.5L7,9V2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18Z"></path>
+        </svg>
+        <span class="no-labels-nav__label">Books</span>
+      </a>
+
+      <a class="no-labels-nav__action" href="#">
+        <svg class="no-labels-nav__icon" viewBox="0 0 24 24">
+          <path d="M20,11H4V8H20M20,15H13V13H20M20,19H13V17H20M11,19H4V13H11M20.33,4.67L18.67,3L17,4.67L15.33,3L13.67,4.67L12,3L10.33,4.67L8.67,3L7,4.67L5.33,3L3.67,4.67L2,3V19A2,2 0 0,0 4,21H20A2,2 0 0,0 22,19V3L20.33,4.67Z"></path>
+        </svg>
+        <span class="no-labels-nav__label">Newsstand</span>
+      </a>
+    </nav>
+
+    <main>
+      <h2>Hidden Labels</h2>
+      <p>Style each action according to the following conditions:</p>
+      <ul>
+        <li>When the <strong>view is in focus</strong>, display that view’s icon and text label</li>
+        <li>When there are only <strong>three actions</strong>, display <a href="index.html">both icons and text labels at all times</a></li>
+        <li>If there are <strong>four or five actions</strong>, display inactive views as icons only</li>
+      </ul>
+    </main>
+  </body>
+</html>

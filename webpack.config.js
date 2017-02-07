@@ -59,7 +59,11 @@ module.exports = function (env) {
             }),
             new HtmlWebpackPlugin({
                 filename: 'index.html',
-                template: path.join(__dirname, 'demo', 'index.hbs')
+                template: path.join(__dirname, 'demo', 'labels-show.hbs')
+            }),
+            new HtmlWebpackPlugin({
+                filename: 'labels-hide.html',
+                template: path.join(__dirname, 'demo', 'labels-hide.hbs')
             })
         ]
     };
