@@ -7,7 +7,7 @@ $bottom-nav-action-max-width: 168px !default;
 $bottom-nav-action-horizontal-padding: 12px !default;
 $bottom-nav-action-vertical-padding: 8px !default;
 $bottom-nav-action-horizontal-margin: 12px !default;
-$bottom-nav-action-color-normal: hsl(0, 0%, 46%) !default;
+$bottom-nav-action-color-inactive: hsl(0, 0%, 46%) !default;
 $bottom-nav-action-color-active: hsl(4, 90%, 58%) !default;
 
 $bottom-nav-icon-font-size: 24px !default;
@@ -93,7 +93,7 @@ $bottom-nav-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
     }
 
     flex: 1 1 auto;
-    color: $bottom-nav-action-color-normal;
+    color: $bottom-nav-action-color-inactive;
     text-decoration: none;
 
     &:not(:last-child) {
