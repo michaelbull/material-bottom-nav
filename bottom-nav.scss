@@ -66,6 +66,8 @@ $bottom-nav-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
   background-color: $bottom-nav-background-color;
   z-index: $bottom-nav-z-index;
 
+  -webkit-tap-highlight-color: transparent;
+
   &__action {
     padding: {
       right: $bottom-nav-action-horizontal-padding;
