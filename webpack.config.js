@@ -58,7 +58,6 @@ module.exports = function (env) {
                 }
             }),
             new HtmlWebpackPlugin({
-                title: 'Material Bottom Navigation',
                 filename: 'index.html',
                 template: path.join(__dirname, 'demo', 'index.hbs')
             })
