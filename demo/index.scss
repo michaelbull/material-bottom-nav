@@ -69,4 +69,8 @@ strong {
 
 .no-labels-nav {
   @include bottom-nav($hide-inactive-labels: true);
+
+  &__action--active {
+    color: hsl(207, 90%, 54%);
+  }
 }
