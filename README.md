@@ -11,8 +11,6 @@ A running demonstration can be found [here][demo].
 <p align="center">
   <a href="https://michaelbull.github.io/material-bottom-nav/">
     <img src="./preview-3.png" alt="Preview" />
-  </a>
-  <a href="https://michaelbull.github.io/material-bottom-nav/">
     <img src="./preview-5.png" alt="Preview" />
   </a>
 </p>
