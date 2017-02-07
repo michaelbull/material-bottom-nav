@@ -48,21 +48,21 @@ The `$hide-inactive-labels` argument defaults to `false`. It is used to hide the
 text label of any inactive actions, as suggested by the
 [style specification][style-spec] if you have more than three actions visible.
 
-Given the example above, the mixin will register style rules for the following
-classes:
+Given the example above the mixin will register a set of style rules that adhere
+to the [“Block Element Modifier” methodology][bem]:
 
 - `.bottom-nav`
   - The container spanning the page's full width.
-- `.bottom-nav__items`
-  - A [flexbox][flexbox] wrapper that contains the individual items.
+- `.bottom-nav__actions`
+  - A [flexbox][flexbox] wrapper that contains all of the navigation actions.
 - `.bottom-nav__item`
-  - An individual navigable item.
+  - An individual navigation action.
 - `.bottom-nav__item--active`
-  - A modifier class to indiciate that the item is the currently active.
+  - A modifier class to indiciate that the action is the currently active.
 - `.bottom-nav__icon`
-  - The [SVG][svg] icon for a navigation item.
+  - The [SVG][svg] icon for an action.
 - `.bottom-nav__label`
-  - The text label for a navigation item.
+  - The text label for an action.
 
 The DOM structure for the component should follow the heirarchy as shown below:
 
@@ -128,6 +128,7 @@ This project is available under the terms of the ISC license. See the
 [demo]: https://michaelbull.github.io/material-bottom-nav/
 [mixin]: https://github.com/michaelbull/material-bottom-nav/blob/master/bottom-nav.scss
 [style-spec]: https://material.io/guidelines/components/bottom-navigation.html#bottom-navigation-style
+[bem]: http://getbem.com/
 [flexbox]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes
 [svg]: https://developer.mozilla.org/en-US/docs/Web/SVG
 [material-icons]: https://materialdesignicons.com/
