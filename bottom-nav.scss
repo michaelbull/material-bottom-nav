@@ -2,13 +2,13 @@ $bottom-nav-z-index: 1000 !default;
 $bottom-nav-border-color: hsl(0, 0%, 88%) !default;
 $bottom-nav-background-color: hsl(0, 0%, 100%) !default;
 
-$bottom-nav-item-min-width: 80px !default;
-$bottom-nav-item-max-width: 168px !default;
-$bottom-nav-item-horizontal-padding: 12px !default;
-$bottom-nav-item-vertical-padding: 8px !default;
-$bottom-nav-item-horizontal-margin: 12px !default;
-$bottom-nav-item-color-normal: hsl(0, 0%, 46%) !default;
-$bottom-nav-item-color-active: hsl(4, 90%, 58%) !default;
+$bottom-nav-action-min-width: 80px !default;
+$bottom-nav-action-max-width: 168px !default;
+$bottom-nav-action-horizontal-padding: 12px !default;
+$bottom-nav-action-vertical-padding: 8px !default;
+$bottom-nav-action-horizontal-margin: 12px !default;
+$bottom-nav-action-color-normal: hsl(0, 0%, 46%) !default;
+$bottom-nav-action-color-active: hsl(4, 90%, 58%) !default;
 
 $bottom-nav-icon-font-size: 24px !default;
 $bottom-nav-icon-margin-bottom: 4px !default;
@@ -75,47 +75,47 @@ $bottom-nav-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
 
   &__action {
     padding: {
-      right: $bottom-nav-item-horizontal-padding;
-      left: $bottom-nav-item-horizontal-padding;
+      right: $bottom-nav-action-horizontal-padding;
+      left: $bottom-nav-action-horizontal-padding;
     }
 
     @if $hide-inactive-labels {
       padding: {
-        top: 2 * $bottom-nav-item-vertical-padding;
-        bottom: 2 * $bottom-nav-item-vertical-padding;
+        top: 2 * $bottom-nav-action-vertical-padding;
+        bottom: 2 * $bottom-nav-action-vertical-padding;
       }
 
-      min-width: $bottom-nav-item-min-width - (4 * $bottom-nav-item-horizontal-padding);
-      max-width: $bottom-nav-item-max-width - (8 * $bottom-nav-item-horizontal-padding);
+      min-width: $bottom-nav-action-min-width - (4 * $bottom-nav-action-horizontal-padding);
+      max-width: $bottom-nav-action-max-width - (8 * $bottom-nav-action-horizontal-padding);
     } @else {
       padding: {
-        top: $bottom-nav-item-vertical-padding;
-        bottom: $bottom-nav-item-vertical-padding;
+        top: $bottom-nav-action-vertical-padding;
+        bottom: $bottom-nav-action-vertical-padding;
       }
 
-      min-width: $bottom-nav-item-min-width - (2 * $bottom-nav-item-horizontal-padding);
-      max-width: $bottom-nav-item-max-width - (2 * $bottom-nav-item-horizontal-padding);
+      min-width: $bottom-nav-action-min-width - (2 * $bottom-nav-action-horizontal-padding);
+      max-width: $bottom-nav-action-max-width - (2 * $bottom-nav-action-horizontal-padding);
     }
 
     flex: 1 1 auto;
-    color: $bottom-nav-item-color-normal;
+    color: $bottom-nav-action-color-normal;
     text-decoration: none;
 
     &:not(:last-child) {
-      margin-right: $bottom-nav-item-horizontal-margin;
+      margin-right: $bottom-nav-action-horizontal-margin;
     }
 
     &--active {
-      padding-top: $bottom-nav-item-vertical-padding - 2px;
-      color: $bottom-nav-item-color-active;
+      padding-top: $bottom-nav-action-vertical-padding - 2px;
+      color: $bottom-nav-action-color-active;
 
       @if $hide-inactive-labels {
         padding: {
-          bottom: $bottom-nav-item-vertical-padding;
+          bottom: $bottom-nav-action-vertical-padding;
         }
 
-        min-width: $bottom-nav-item-min-width - (2 * $bottom-nav-item-horizontal-padding);
-        max-width: $bottom-nav-item-max-width - (2 * $bottom-nav-item-horizontal-padding);
+        min-width: $bottom-nav-action-min-width - (2 * $bottom-nav-action-horizontal-padding);
+        max-width: $bottom-nav-action-max-width - (2 * $bottom-nav-action-horizontal-padding);
       }
     }
   }
