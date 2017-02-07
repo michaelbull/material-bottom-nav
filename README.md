@@ -4,8 +4,6 @@ A bottom navigation bar adhering to the [Material Design specification][spec].
 It is written purely using [Sass][sass] mixins which allow you to apply the
 style rules to any class, as shown in the [demo page's stylesheet][demo.scss].
 
-## Demo
-
 A running demonstration can be found [here][demo].
 
 <br />
