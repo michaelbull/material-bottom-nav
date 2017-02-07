@@ -6,7 +6,9 @@
   "style": "bottom-nav.scss",
   "scripts": {
     "start": "webpack-dev-server --env.dev --inline --hot --open",
-    "build": "webpack --env.prod"
+    "build": "webpack --env.prod",
+    "clean": "rm -rf dist/*",
+    "deploy": "npm run clean && npm run build && push-dir --dir=dist --branch=gh-pages"
   },
   "repository": {
     "type": "git",
