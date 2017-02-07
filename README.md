@@ -94,7 +94,9 @@ The DOM structure for the component should follow the heirarchy as shown below:
 </nav>
 ```
 
-The example above includes icons from [Material Design Icons][material-icons].
+The example above includes icons from the
+[Material Design Icons][material-icons] project
+([LICENSE][material-icons-license]).
 
 ## Customization
 
@@ -133,5 +135,6 @@ This project is available under the terms of the ISC license. See the
 [flexbox]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes
 [svg]: https://developer.mozilla.org/en-US/docs/Web/SVG
 [material-icons]: https://materialdesignicons.com/
+[material-icons-license]: https://github.com/Templarian/MaterialDesign/blob/master/license.txt
 [github]: https://github.com/michaelbull/material-bottom-nav
 [license]: https://github.com/michaelbull/material-bottom-nav/blob/master/LICENSE
