@@ -33,7 +33,7 @@ Apply the the mixin to a class:
 ```
 
 The `$hide-inactive-labels` argument defaults to `false`. It is used to hide the
-text label of any inactive action's, as suggested by the
+text label of any inactive actions, as suggested by the
 [style specification][style-spec] if you have more than three actions visible.
 
 Given the example above, the mixin will register style rules for the following
