@@ -40,7 +40,7 @@ Apply the the mixin to a class:
 
 ```sass
 .bottom-nav {
-  @include bottom-nav($hide-inactive-labels: false);
+  @include bottom-nav($background-color: #009688, $active-color: #FFFFFF, $inactive-color: #E0E0E0, $hide-background-labels: true);
 }
 ```
 
@@ -101,13 +101,13 @@ configured by overriding the default variable values defined in
 importing the mixin file, for example:
 
 ```sass
-$bottom-nav-action-color-active: #2196F3; // change the color of active actions to blue
 $bottom-nav-action-horizontal-margin: 4px; // reduce the horizontal gutter between actions
+$bottom-nav-icon-font-size: 28px; // increase the icon size
 
 @import '~material-bottom-nav/bottom-nav';
 
 .bottom-nav {
-  @include bottom-nav();
+  @include bottom-nav(#009688, #FFFFFF, #E0E0E0);
 }
 ```
 
@@ -122,9 +122,9 @@ This project is available under the terms of the ISC license. See the
 
 [spec]: https://material.io/guidelines/components/bottom-navigation.html
 [sass]: http://sass-lang.com/guide
-[demo.scss]: https://github.com/michaelbull/material-bottom-nav/blob/master/demo/index.scss#L64
+[demo.scss]: https://github.com/michaelbull/material-bottom-nav/blob/master/demo/index.scss#L72
 [demo]: https://michaelbull.github.io/material-bottom-nav/
-[mixin]: https://github.com/michaelbull/material-bottom-nav/blob/master/bottom-nav.scss
+[mixin]: https://github.com/michaelbull/material-bottom-nav/blob/master/bottom-nav.scss#
 [style-spec]: https://material.io/guidelines/components/bottom-navigation.html#bottom-navigation-style
 [bem]: http://getbem.com/
 [flexbox]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes
