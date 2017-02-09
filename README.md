@@ -31,7 +31,7 @@ npm install --save material-bottom-nav
 Then import the [Sass mixin][mixin]:
 
 ```sass
-@import '~material-bottom-nav/bottom-nav';
+@import '~material-bottom-nav';
 ```
 
 ## Usage
