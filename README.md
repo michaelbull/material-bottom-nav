@@ -1,5 +1,12 @@
 # material-bottom-nav
 
+[![license][license-badge]][license]
+[![npm version][npm-badge]][npm]
+[![npm downloads][downloads-badge]][downloads]
+[![dependencies status][dependencies-badge]][dependencies]
+[![devDependencies status][devDependencies-badge]][devDependencies]
+[![peerDependencies status][peerDependencies-badge]][peerDependencies]
+
 A bottom navigation bar adhering to the [Material Design specification][spec].
 It is written purely using [Sass][sass] mixins which allow you to apply the
 style rules to any class, as shown in the [demo page's stylesheet][demo.scss].
@@ -120,6 +127,18 @@ Bug reports and pull requests are welcome on [GitHub][github].
 This project is available under the terms of the ISC license. See the
 [`LICENSE`][license] file for the copyright information and licensing terms.
 
+[license-badge]: https://img.shields.io/github/license/michaelbull/material-bottom-nav.svg?style=flat-square
+[license]: https://github.com/michaelbull/material-bottom-nav/blob/master/LICENSE
+[npm-badge]: https://img.shields.io/npm/v/material-bottom-nav.svg?style=flat-square
+[npm]: https://www.npmjs.com/package/material-bottom-nav
+[downloads-badge]: https://img.shields.io/npm/dt/material-bottom-nav.svg?style=flat-square
+[downloads]: https://www.npmjs.com/package/material-bottom-nav
+[dependencies-badge]: https://david-dm.org/michaelbull/material-bottom-nav.svg?style=flat-square
+[dependencies]: https://david-dm.org/michaelbull/material-bottom-nav
+[devDependencies-badge]: https://david-dm.org/michaelbull/material-bottom-nav/dev-status.svg?style=flat-square
+[devDependencies]: https://david-dm.org/michaelbull/material-bottom-nav?type=dev
+[peerDependencies-badge]: https://david-dm.org/michaelbull/material-bottom-nav/peer-status.svg?style=flat-square
+[peerDependencies]: https://david-dm.org/michaelbull/material-bottom-nav?type=peer
 [spec]: https://material.io/guidelines/components/bottom-navigation.html
 [sass]: http://sass-lang.com/guide
 [demo.scss]: https://github.com/michaelbull/material-bottom-nav/blob/master/demo/index.scss#L72
@@ -132,4 +151,3 @@ This project is available under the terms of the ISC license. See the
 [material-icons]: https://materialdesignicons.com/
 [material-icons-license]: https://github.com/Templarian/MaterialDesign/blob/master/license.txt
 [github]: https://github.com/michaelbull/material-bottom-nav
-[license]: https://github.com/michaelbull/material-bottom-nav/blob/master/LICENSE
