@@ -104,7 +104,7 @@ importing the mixin file, for example:
 $bottom-nav-action-horizontal-margin: 4px; // reduce the horizontal gutter between actions
 $bottom-nav-icon-font-size: 28px; // increase the icon size
 
-@import '~material-bottom-nav/bottom-nav';
+@import '~material-bottom-nav';
 
 .bottom-nav {
   @include bottom-nav(#009688, #FFFFFF, #E0E0E0);
