@@ -1,5 +1,11 @@
 @import '../bottom-nav';
 
+$grey-300: #E0E0E0;
+$grey-600: #757575;
+$red-500: #F44336;
+$teal-500: #009688;
+$white: #FFFFFF;
+
 html {
   text-size-adjust: 100%;
 }
@@ -64,19 +70,9 @@ strong {
 }
 
 .bottom-nav {
-  @include bottom-nav($hide-inactive-labels: false);
+  @include bottom-nav($white, $red-500, $grey-600);
 }
 
 .no-labels-nav {
-  @include bottom-nav($hide-inactive-labels: true);
-
-  background-color: hsl(174, 100%, 29%);
-
-  &__action {
-    color: hsl(0, 0%, 88%);
-  }
-
-  &__action--active {
-    color: hsl(0, 0%, 98%);
-  }
+  @include bottom-nav($teal-500, $white, $grey-300, true);
 }

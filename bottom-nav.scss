@@ -1,14 +1,11 @@
 $bottom-nav-z-index: 1000 !default;
 $bottom-nav-border-color: hsl(0, 0%, 88%) !default;
-$bottom-nav-background-color: hsl(0, 0%, 100%) !default;
 
 $bottom-nav-action-min-width: 80px !default;
 $bottom-nav-action-max-width: 168px !default;
 $bottom-nav-action-horizontal-padding: 12px !default;
 $bottom-nav-action-vertical-padding: 8px !default;
 $bottom-nav-action-horizontal-margin: 12px !default;
-$bottom-nav-action-color-inactive: hsl(0, 0%, 46%) !default;
-$bottom-nav-action-color-active: hsl(4, 90%, 58%) !default;
 
 $bottom-nav-icon-font-size: 24px !default;
 $bottom-nav-icon-margin-bottom: 4px !default;
@@ -51,7 +48,7 @@ $bottom-nav-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
   }
 }
 
-@mixin bottom-nav($hide-inactive-labels: false) {
+@mixin bottom-nav($background-color, $active-color, $inactive-color, $hide-inactive-labels: false) {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,7 +60,7 @@ $bottom-nav-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
 
   box-shadow: $bottom-nav-box-shadow;
   border-top: 1px solid $bottom-nav-border-color;
-  background-color: $bottom-nav-background-color;
+  background-color: $background-color;
   z-index: $bottom-nav-z-index;
 
   -webkit-tap-highlight-color: transparent;
@@ -93,7 +90,7 @@ $bottom-nav-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
     }
 
     flex: 1 1 auto;
-    color: $bottom-nav-action-color-inactive;
+    color: $inactive-color;
     text-decoration: none;
 
     &:not(:last-child) {
@@ -102,7 +99,7 @@ $bottom-nav-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
 
     &--active {
       padding-top: $bottom-nav-action-vertical-padding - 2px;
-      color: $bottom-nav-action-color-active;
+      color: $active-color;
 
       @if $hide-inactive-labels {
         padding: {
