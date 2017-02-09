@@ -13,8 +13,6 @@ style rules to any class, as shown in the [demo page's stylesheet][demo.scss].
 
 A running demonstration can be found [here][demo].
 
-<br />
-
 [![Three actions](/preview-3.png)](https://michaelbull.github.io/material-bottom-nav/) [![Five actions, hidden labels](/preview-5.png)](https://michaelbull.github.io/material-bottom-nav/labels-hide.html)
 
 <br />
