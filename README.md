@@ -40,7 +40,7 @@ Apply the the mixin to a class:
 
 ```sass
 .bottom-nav {
-  @include bottom-nav($background-color: #009688, $active-color: #FFFFFF, $inactive-color: #E0E0E0, $hide-background-labels: true);
+  @include bottom-nav($background-color: #009688, $active-color: #FFFFFF, $inactive-color: #E0E0E0, $hide-inactive-labels: true);
 }
 ```
 
