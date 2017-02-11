@@ -42,11 +42,6 @@ $bottom-nav-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
   right: 0;
 
   font-family: $bottom-nav-label-font-family;
-  font-weight: 400;
-  line-height: 1;
-  text-align: center;
-  white-space: nowrap;
-
   box-shadow: $bottom-nav-box-shadow;
   border-top: 1px solid $bottom-nav-border-color;
   background-color: $background-color;
@@ -139,6 +134,11 @@ $bottom-nav-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
   }
 
   &__label {
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+
     @if $hide-inactive-labels {
       display: none;
     } @else {
