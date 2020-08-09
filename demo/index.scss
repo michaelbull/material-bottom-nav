@@ -73,19 +73,37 @@ strong {
 }
 
 .bottom-nav {
-  @include bottom-nav($white, $red-500, $grey-600);
+  @include bottom-nav(
+    $background-color: $white,
+    $active-color: $red-500,
+    $inactive-color: $grey-600
+  );
 }
 
 .hidden-labels-nav {
-  @include bottom-nav($teal-500, $white, $grey-300, true);
+  @include bottom-nav(
+    $background-color: $teal-500,
+    $active-color: $white,
+    $inactive-color: $grey-300,
+    $hide-inactive-labels: true
+  );
 }
 
 .badges-nav {
-  @include bottom-nav($white, $purple-500, $grey-600, true);
+  @include bottom-nav(
+    $background-color: $white,
+    $active-color: $purple-500,
+    $inactive-color: $grey-600,
+    $hide-inactive-labels: true
+  );
 }
 
 .horizontal-nav {
-  @include bottom-nav($purple-500, $white, $purple-200);
+  @include bottom-nav(
+    $background-color: $purple-500,
+    $active-color: $white,
+    $inactive-color: $purple-200
+  );
 
   @media (min-width: $bottom-nav-action-horizontal-min-width * 4) {
     @include bottom-nav-horizontal();

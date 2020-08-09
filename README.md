@@ -14,9 +14,6 @@ style rules to any class, as shown in the [demo page's stylesheet][demo.scss].
 A running demonstration can be found [here][demo].
 
 [![Three actions](/img/index.png)](https://michaelbull.github.io/material-bottom-nav/)
-[![Hidden labels](/img/hidden-labels.png)](https://michaelbull.github.io/material-bottom-nav/hidden-labels.html)
-[![Badges](/img/badges.png)](https://michaelbull.github.io/material-bottom-nav/badges.html)
-[![Horizontal](/img/horizontal.png)](https://michaelbull.github.io/material-bottom-nav/horizontal.html)
 
 <br />
 <br />
@@ -31,39 +28,25 @@ npm install --save material-bottom-nav
 
 Then import the [Sass mixin][mixin]:
 
-```sass
+```scss
 @import '~material-bottom-nav';
 ```
 
 ## Usage
 
-Apply the the mixin to a class:
+Apply the mixin to a class:
 
-```sass
+```scss
 .bottom-nav {
-  @include bottom-nav($background-color: #009688, $active-color: #FFFFFF, $inactive-color: #E0E0E0, $hide-inactive-labels: true);
+  @include bottom-nav(
+    $background-color: #009688,
+    $active-color: #FFFFFF,
+    $inactive-color: #E0E0E0
+  );
 }
 ```
 
-The `$hide-inactive-labels` argument defaults to `false`. It is used to hide the
-text label of any inactive actions, as suggested by the
-[style specification][style-spec] if you have more than three actions visible.
-
-Given the example above the mixin will register a set of style rules that adhere
-to the [“Block Element Modifier” methodology][bem]:
-
-- `.bottom-nav`
-  - The [flexbox][flexbox] parent element.
-- `.bottom-nav__action`
-  - An individual navigation action.
-- `.bottom-nav__action--active`
-  - A modifier class to indiciate that the action is the currently active.
-- `.bottom-nav__icon`
-  - The [SVG][svg] icon for an action.
-- `.bottom-nav__label`
-  - The text label for an action.
-
-The DOM structure for the component should follow the heirarchy as shown below:
+Structure your template:
 
 ```html
 <nav class="bottom-nav">
@@ -90,9 +73,205 @@ The DOM structure for the component should follow the heirarchy as shown below:
 </nav>
 ```
 
-The example above includes icons from the
-[Material Design Icons][material-icons] project
-([LICENSE][material-icons-license]).
+[![Three actions](/img/index.png)](https://michaelbull.github.io/material-bottom-nav/)
+
+### Hiding inactive labels
+
+The `$hide-inactive-labels` argument defaults to `false`. It is used to hide the
+text label of any inactive actions, as suggested by the
+[style specification][style-spec] if you have more than three actions visible.
+
+[![Hidden labels](/img/hidden-labels.png)](https://michaelbull.github.io/material-bottom-nav/hidden-labels.html)
+
+<details>
+<summary>Style</summary>
+<p>
+
+```scss
+.hidden-labels-nav {
+  @include bottom-nav(
+    $background-color: #009688,
+    $active-color: #FFFFFF,
+    $inactive-color: #E0E0E0,
+    $hide-inactive-labels: true
+  );
+}
+```
+</p>
+</details>
+
+<details>
+<summary>Template</summary>
+<p>
+
+```html
+<nav class="hidden-labels-nav">
+  <a class="hidden-labels-nav__action" href="#">
+    <svg class="hidden-labels-nav__icon" viewBox="0 0 24 24">
+      <path d="M21,16H3V4H21M21,2H3C1.89,2 1,2.89 1,4V16A2,2 0 0,0 3,18H10V20H8V22H16V20H14V18H21A2,2 0 0,0 23,16V4C23,2.89 22.1,2 21,2Z"></path>
+    </svg>
+    <span class="hidden-labels-nav__label">Movies &amp; TV</span>
+  </a>
+
+  <a class="hidden-labels-nav__action" href="#">
+    <svg class="hidden-labels-nav__icon" viewBox="0 0 24 24">
+      <path d="M12,3V12.26C11.5,12.09 11,12 10.5,12C8,12 6,14 6,16.5C6,19 8,21 10.5,21C13,21 15,19 15,16.5V6H19V3H12Z"></path>
+    </svg>
+    <span class="hidden-labels-nav__label">Music</span>
+  </a>
+
+  <a class="hidden-labels-nav__action hidden-labels-nav__action--active" href="#">
+    <svg class="hidden-labels-nav__icon" viewBox="0 0 24 24">
+      <path d="M18,22A2,2 0 0,0 20,20V4C20,2.89 19.1,2 18,2H12V9L9.5,7.5L7,9V2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18Z"></path>
+    </svg>
+    <span class="hidden-labels-nav__label">Books</span>
+  </a>
+
+  <a class="hidden-labels-nav__action" href="#">
+    <svg class="hidden-labels-nav__icon" viewBox="0 0 24 24">
+      <path d="M20,11H4V8H20M20,15H13V13H20M20,19H13V17H20M11,19H4V13H11M20.33,4.67L18.67,3L17,4.67L15.33,3L13.67,4.67L12,3L10.33,4.67L8.67,3L7,4.67L5.33,3L3.67,4.67L2,3V19A2,2 0 0,0 4,21H20A2,2 0 0,0 22,19V3L20.33,4.67Z"></path>
+    </svg>
+    <span class="hidden-labels-nav__label">Newsstand</span>
+  </a>
+
+  <a class="hidden-labels-nav__action" href="#">
+    <svg class="hidden-labels-nav__icon" viewBox="0 0 24 24">
+      <path d="M7,6H17A6,6 0 0,1 23,12A6,6 0 0,1 17,18C15.22,18 13.63,17.23 12.53,16H11.47C10.37,17.23 8.78,18 7,18A6,6 0 0,1 1,12A6,6 0 0,1 7,6M6,9V11H4V13H6V15H8V13H10V11H8V9H6M15.5,12A1.5,1.5 0 0,0 14,13.5A1.5,1.5 0 0,0 15.5,15A1.5,1.5 0 0,0 17,13.5A1.5,1.5 0 0,0 15.5,12M18.5,9A1.5,1.5 0 0,0 17,10.5A1.5,1.5 0 0,0 18.5,12A1.5,1.5 0 0,0 20,10.5A1.5,1.5 0 0,0 18.5,9Z"></path>
+    </svg>
+    <span class="hidden-labels-nav__label">Games</span>
+  </a>
+</nav>
+```
+</p>
+</details>
+
+### Badges
+
+Bottom navigation icons can include badges in their upper right corner. These
+badges can contain dynamic information, such as a number of pending requests.
+
+[![Badges](/img/badges.png)](https://michaelbull.github.io/material-bottom-nav/badges.html)
+
+<details>
+<summary>Style</summary>
+<p>
+
+```scss
+.badges-nav {
+  @include bottom-nav(
+      $background-color: white,
+      $active-color: #6200EE,
+      $inactive-color: #757575,
+      $hide-inactive-labels: true
+  );
+}
+```
+</p>
+</details>
+
+<details>
+<summary>Template</summary>
+<p>
+
+```html
+<nav class="badges-nav">
+  <a class="badges-nav__action badges-nav__action--active" href="#">
+    <svg class="badges-nav__icon" viewBox="0 0 24 24">
+      <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"></path>
+    </svg>
+    <span class="badges-nav__label">Item One Max</span>
+    <span class="badges-nav__badge"></span>
+  </a>
+
+  <a class="badges-nav__action" href="#">
+    <svg class="badges-nav__icon" viewBox="0 0 24 24">
+      <path d="M12 3V13.55C11.41 13.21 10.73 13 10 13C7.79 13 6 14.79 6 17S7.79 21 10 21 14 19.21 14 17V7H18V3H12Z" />
+    </svg>
+    <span class="badges-nav__label">Item Two</span>
+  </a>
+
+  <a class="badges-nav__action" href="#">
+    <svg class="badges-nav__icon" viewBox="0 0 24 24">
+      <path d="M13,12H20V13.5H13M13,9.5H20V11H13M13,14.5H20V16H13M21,4H3A2,2 0 0,0 1,6V19A2,2 0 0,0 3,21H21A2,2 0 0,0 23,19V6A2,2 0 0,0 21,4M21,19H12V6H21" />
+    </svg>
+    <span class="badges-nav__label">Item Three</span>
+    <span class="badges-nav__badge">88</span>
+  </a>
+
+  <a class="badges-nav__action" href="#">
+    <svg class="badges-nav__icon" viewBox="0 0 24 24">
+      <path d="M20,11H4V8H20M20,15H13V13H20M20,19H13V17H20M11,19H4V13H11M20.33,4.67L18.67,3L17,4.67L15.33,3L13.67,4.67L12,3L10.33,4.67L8.67,3L7,4.67L5.33,3L3.67,4.67L2,3V19A2,2 0 0,0 4,21H20A2,2 0 0,0 22,19V3L20.33,4.67Z" />
+    </svg>
+    <span class="badges-nav__label">Item Four</span>
+    <span class="badges-nav__badge">888+</span>
+  </a>
+</nav>
+```
+</p>
+</details>
+
+### Horizontal
+
+On mobile (in landscape mode) or tablet, bottom navigation destinations can be
+positioned horizontally instead of stacked.
+
+[![Horizontal](/img/horizontal.png)](https://michaelbull.github.io/material-bottom-nav/horizontal.html)
+
+<details>
+<summary>Style</summary>
+<p>
+
+```scss
+.horizontal-nav {
+  @include bottom-nav(
+      $background-color: #6200EE,
+      $active-color: white,
+      $inactive-color: #BB86FC
+  );
+
+  @include bottom-nav-horizontal();
+}
+```
+</p>
+</details>
+
+<details>
+<summary>Template</summary>
+<p>
+
+```html
+<nav class="horizontal-nav">
+  <a class="horizontal-nav__action horizontal-nav__action--active" href="#">
+    <svg class="horizontal-nav__icon" viewBox="0 0 24 24">
+      <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"></path>
+    </svg>
+    <span class="horizontal-nav__label">Favorites</span>
+  </a>
+
+  <a class="horizontal-nav__action" href="#">
+    <svg class="horizontal-nav__icon" viewBox="0 0 24 24">
+      <path d="M12 3V13.55C11.41 13.21 10.73 13 10 13C7.79 13 6 14.79 6 17S7.79 21 10 21 14 19.21 14 17V7H18V3H12Z" />
+    </svg>
+    <span class="horizontal-nav__label">Music</span>
+  </a>
+
+  <a class="horizontal-nav__action" href="#">
+    <svg class="horizontal-nav__icon" viewBox="0 0 24 24">
+      <path d="M13,12H20V13.5H13M13,9.5H20V11H13M13,14.5H20V16H13M21,4H3A2,2 0 0,0 1,6V19A2,2 0 0,0 3,21H21A2,2 0 0,0 23,19V6A2,2 0 0,0 21,4M21,19H12V6H21" />
+    </svg>
+    <span class="horizontal-nav__label">Books</span>
+  </a>
+
+  <a class="horizontal-nav__action" href="#">
+    <svg class="horizontal-nav__icon" viewBox="0 0 24 24">
+      <path d="M20,11H4V8H20M20,15H13V13H20M20,19H13V17H20M11,19H4V13H11M20.33,4.67L18.67,3L17,4.67L15.33,3L13.67,4.67L12,3L10.33,4.67L8.67,3L7,4.67L5.33,3L3.67,4.67L2,3V19A2,2 0 0,0 4,21H20A2,2 0 0,0 22,19V3L20.33,4.67Z" />
+    </svg>
+    <span class="horizontal-nav__label">News</span>
+  </a>
+</nav>
+```
+</p>
+</details>
 
 ## Customization
 
@@ -101,8 +280,8 @@ configured by overriding the default variable values defined in
 [`bottom-nav.scss`][mixin]. Remember to define your overrides **before**
 importing the mixin file, for example:
 
-```sass
-$bottom-nav-action-horizontal-margin: 4px; // reduce the horizontal gutter between actions
+```scss
+$bottom-nav-action-horizontal-padding: 4px; // reduce the horizontal padding within each action
 $bottom-nav-icon-font-size: 28px; // increase the icon size
 
 @import '~material-bottom-nav';
@@ -120,6 +299,9 @@ Bug reports and pull requests are welcome on [GitHub][github].
 
 This project is available under the terms of the ISC license. See the
 [`LICENSE`][license] file for the copyright information and licensing terms.
+
+Examples used include icons from the [Material Design Icons][material-icons]
+project ([LICENSE][material-icons-license]).
 
 [license-badge]: https://img.shields.io/github/license/michaelbull/material-bottom-nav.svg?style=flat-square
 [license]: https://github.com/michaelbull/material-bottom-nav/blob/master/LICENSE
@@ -139,8 +321,6 @@ This project is available under the terms of the ISC license. See the
 [demo]: https://michaelbull.github.io/material-bottom-nav/
 [mixin]: https://github.com/michaelbull/material-bottom-nav/blob/master/bottom-nav.scss#
 [style-spec]: https://material.io/guidelines/components/bottom-navigation.html#bottom-navigation-style
-[bem]: http://getbem.com/
-[flexbox]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes
 [svg]: https://developer.mozilla.org/en-US/docs/Web/SVG
 [material-icons]: https://materialdesignicons.com/
 [material-icons-license]: https://github.com/Templarian/MaterialDesign/blob/master/license.txt
