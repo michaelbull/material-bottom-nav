@@ -16,7 +16,6 @@ A running demonstration can be found [here][demo].
 [![Three actions](/img/index.png)](https://michaelbull.github.io/material-bottom-nav/)
 
 <br />
-<br />
 
 ## Installation
 
@@ -143,6 +142,8 @@ text label of any inactive actions, as suggested by the
 
 [![Hidden labels](/img/hidden-labels.png)](https://michaelbull.github.io/material-bottom-nav/hidden-labels.html)
 
+<br />
+
 ## Badges
 
 Bottom navigation icons can include badges in their upper right corner. These
@@ -208,6 +209,8 @@ badges can contain dynamic information, such as a number of pending requests.
 
 [![Badges](/img/badges.png)](https://michaelbull.github.io/material-bottom-nav/badges.html)
 
+<br />
+
 ## Horizontal
 
 On mobile (in landscape mode) or tablet, bottom navigation destinations can be
@@ -270,6 +273,8 @@ positioned horizontally instead of stacked.
 </details>
 
 [![Horizontal](/img/horizontal.png)](https://michaelbull.github.io/material-bottom-nav/horizontal.html)
+
+<br />
 
 ## Customization
 
