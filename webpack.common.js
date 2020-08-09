@@ -26,11 +26,15 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: path.join(__dirname, 'demo', 'labels-show.hbs')
+            template: path.join(__dirname, 'demo', 'index.hbs')
         }),
         new HtmlWebpackPlugin({
-            filename: 'labels-hide.html',
-            template: path.join(__dirname, 'demo', 'labels-hide.hbs')
+            filename: 'badges.html',
+            template: path.join(__dirname, 'demo', 'badges.hbs')
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'hidden-labels.html',
+            template: path.join(__dirname, 'demo', 'hidden-labels.hbs')
         })
     ],
 

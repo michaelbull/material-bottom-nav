@@ -26,6 +26,10 @@ $bottom-nav-label-font-family: (
   sans-serif
 ) !default;
 
+$bottom-nav-badge-font-size: 10px !default;
+$bottom-nav-badge-color: white !default;
+$bottom-nav-badge-background-color: hsl(348, 100%, 52%) !default;
+
 // 8dp elevation
 $bottom-nav-box-shadow: (
   0 5px 5px -3px rgba(0, 0, 0, 0.2),
@@ -56,10 +60,7 @@ $bottom-nav-box-shadow: (
   }
 
   &__action {
-    padding: {
-      right: $bottom-nav-action-horizontal-padding;
-      left: $bottom-nav-action-horizontal-padding;
-    }
+    position: relative;
 
     padding: $bottom-nav-action-vertical-padding $bottom-nav-action-horizontal-padding;
 
@@ -114,6 +115,40 @@ $bottom-nav-box-shadow: (
     white-space: nowrap;
   }
 
+  &__badge {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 4px;
+    left: calc(50% + 6px);
+
+    padding: {
+      top: 3px;
+      right: 2px;
+      bottom: 1px;
+      left: 2px;
+    }
+
+    min-width: 5px;
+    min-height: 5px;
+
+    font-size: $bottom-nav-badge-font-size;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+
+    color: $bottom-nav-badge-color;
+    background-color: $bottom-nav-badge-background-color;
+    border-radius: 9999px;
+
+    background-clip: padding-box;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+  }
+
   &__action--active &__label {
     font-size: $bottom-nav-label-font-size-active;
   }
@@ -135,6 +170,10 @@ $bottom-nav-box-shadow: (
       display: none;
     }
 
+    &__badge {
+      top: 14px;
+    }
+
     &__action--active {
       padding-top: $bottom-nav-action-vertical-padding - 2px;
       padding-bottom: $bottom-nav-action-vertical-padding;
@@ -149,6 +188,10 @@ $bottom-nav-box-shadow: (
 
     &__action--active &__label {
       display: block;
+    }
+
+    &__action--active &__label + &__badge {
+      top: 4px;
     }
   }
 }

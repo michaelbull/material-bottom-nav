@@ -4,6 +4,7 @@ $grey-300: #E0E0E0;
 $grey-600: #757575;
 $red-500: #F44336;
 $teal-500: #009688;
+$purple-500: #6200EE;
 $white: #FFFFFF;
 
 html {
@@ -22,8 +23,9 @@ body {
 
   color: rgba(0, 0, 0, 0.87);
 
-  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 main {
@@ -73,6 +75,10 @@ strong {
   @include bottom-nav($white, $red-500, $grey-600);
 }
 
-.no-labels-nav {
+.hidden-labels-nav {
   @include bottom-nav($teal-500, $white, $grey-300, true);
+}
+
+.badges-nav {
+  @include bottom-nav($white, $purple-500, $grey-600, true);
 }
