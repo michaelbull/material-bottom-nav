@@ -16,8 +16,10 @@
 *.iws
 
 # npm
-node_modules/
-npm-debug.log*
+!.npm*
+/node_modules
+/npm-debug.log*
+/*.tgz
 
 # Distribution
-dist/
+/dist
