@@ -4,6 +4,7 @@ $grey-300: #E0E0E0;
 $grey-600: #757575;
 $red-500: #F44336;
 $teal-500: #009688;
+$purple-200: #BB86FC;
 $purple-500: #6200EE;
 $white: #FFFFFF;
 
@@ -81,4 +82,12 @@ strong {
 
 .badges-nav {
   @include bottom-nav($white, $purple-500, $grey-600, true);
+}
+
+.horizontal-nav {
+  @include bottom-nav($purple-500, $white, $purple-200);
+
+  @media (min-width: $bottom-nav-action-horizontal-min-width * 4) {
+    @include bottom-nav-horizontal();
+  }
 }

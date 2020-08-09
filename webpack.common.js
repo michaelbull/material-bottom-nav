@@ -35,6 +35,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'hidden-labels.html',
             template: path.join(__dirname, 'demo', 'hidden-labels.hbs')
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'horizontal.html',
+            template: path.join(__dirname, 'demo', 'horizontal.hbs')
         })
     ],
 

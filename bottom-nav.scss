@@ -1,17 +1,16 @@
 $bottom-nav-z-index: 1000 !default;
 $bottom-nav-border-color: hsl(0, 0%, 88%) !default;
 
+$bottom-nav-icon-font-size: 24px !default;
+$bottom-nav-icon-margin-bottom: 4px !default;
+
 $bottom-nav-action-min-width: 80px !default;
 $bottom-nav-action-max-width: 168px !default;
 $bottom-nav-action-horizontal-padding: 12px !default;
 $bottom-nav-action-vertical-padding: 8px !default;
-$bottom-nav-action-horizontal-margin: 12px !default;
+$bottom-nav-action-horizontal-min-width: $bottom-nav-action-min-width + $bottom-nav-icon-font-size + (2 * $bottom-nav-action-horizontal-padding) !default;
 
-$bottom-nav-icon-font-size: 24px !default;
-$bottom-nav-icon-margin-bottom: 4px !default;
-
-$bottom-nav-label-font-size-inactive: 12px !default;
-$bottom-nav-label-font-size-active: 14px !default;
+$bottom-nav-label-font-size: 12px !default;
 $bottom-nav-label-font-family: (
   -apple-system, // iOS
   BlinkMacSystemFont, // macOS
@@ -62,6 +61,11 @@ $bottom-nav-box-shadow: (
   &__action {
     position: relative;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     padding: $bottom-nav-action-vertical-padding $bottom-nav-action-horizontal-padding;
 
     min-width: $bottom-nav-action-min-width - (2 * $bottom-nav-action-horizontal-padding);
@@ -72,27 +76,26 @@ $bottom-nav-box-shadow: (
     color: $inactive-color;
     text-decoration: none;
 
-    &:not(:last-child) {
-      margin-right: $bottom-nav-action-horizontal-margin;
+    &--active {
+      color: $active-color;
     }
 
-    &--active {
-      padding-top: $bottom-nav-action-vertical-padding - 2px;
-      color: $active-color;
+    &:focus {
+      outline: 0;
     }
   }
 
   &__icon {
+    flex: 0 0 auto;
+
     display: block;
     width: 1em;
     height: 1em;
-    font-size: $bottom-nav-icon-font-size;
 
-    margin: {
-      left: auto;
-      right: auto;
-      bottom: $bottom-nav-icon-margin-bottom;
-    }
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: $bottom-nav-icon-font-size;
 
     path,
     polygon,
@@ -107,10 +110,16 @@ $bottom-nav-box-shadow: (
   }
 
   &__label {
+    flex: 0 0 auto;
+
     display: block;
-    font-size: $bottom-nav-label-font-size-inactive;
+
+    margin-top: 4px;
+
+    font-size: $bottom-nav-label-font-size;
     font-weight: 400;
     line-height: 1;
+
     text-align: center;
     white-space: nowrap;
   }
@@ -121,15 +130,10 @@ $bottom-nav-box-shadow: (
     align-items: center;
 
     position: absolute;
-    top: 4px;
+    top: 6px;
     left: calc(50% + 6px);
 
-    padding: {
-      top: 3px;
-      right: 2px;
-      bottom: 1px;
-      left: 2px;
-    }
+    padding: 2px;
 
     min-width: 5px;
     min-height: 5px;
@@ -143,14 +147,6 @@ $bottom-nav-box-shadow: (
     color: $bottom-nav-badge-color;
     background-color: $bottom-nav-badge-background-color;
     border-radius: 9999px;
-
-    background-clip: padding-box;
-    -moz-background-clip: padding;
-    -webkit-background-clip: padding-box;
-  }
-
-  &__action--active &__label {
-    font-size: $bottom-nav-label-font-size-active;
   }
 
   @if $hide-inactive-labels {
@@ -162,10 +158,6 @@ $bottom-nav-box-shadow: (
       max-width: $bottom-nav-action-max-width - (8 * $bottom-nav-action-horizontal-padding);
     }
 
-    &__icon {
-      margin-bottom: 0;
-    }
-
     &__label {
       display: none;
     }
@@ -175,15 +167,11 @@ $bottom-nav-box-shadow: (
     }
 
     &__action--active {
-      padding-top: $bottom-nav-action-vertical-padding - 2px;
+      padding-top: $bottom-nav-action-vertical-padding;
       padding-bottom: $bottom-nav-action-vertical-padding;
 
       min-width: $bottom-nav-action-min-width - (2 * $bottom-nav-action-horizontal-padding);
       max-width: $bottom-nav-action-max-width - (2 * $bottom-nav-action-horizontal-padding);
-    }
-
-    &__action--active &__icon {
-      margin-bottom: $bottom-nav-icon-margin-bottom;
     }
 
     &__action--active &__label {
@@ -191,7 +179,41 @@ $bottom-nav-box-shadow: (
     }
 
     &__action--active &__label + &__badge {
-      top: 4px;
+      top: 6px;
+    }
+  }
+}
+
+@mixin bottom-nav-horizontal($hide-inactive-labels: false) {
+  &__action {
+    flex-direction: row;
+
+    padding-top: 2 * $bottom-nav-action-vertical-padding;
+    padding-bottom: 2 * $bottom-nav-action-vertical-padding;
+
+    min-width: $bottom-nav-action-horizontal-min-width - (2 * $bottom-nav-action-horizontal-padding);
+  }
+
+  &__icon {
+    margin: {
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &__label {
+    margin-top: 2px;
+    margin-left: $bottom-nav-action-horizontal-padding;
+    margin-right: $bottom-nav-action-horizontal-padding;
+  }
+
+  @if $hide-inactive-labels {
+    &__action {
+      min-width: $bottom-nav-action-min-width - (4 * $bottom-nav-action-horizontal-padding);
+    }
+
+    &__action--active {
+      min-width: $bottom-nav-action-horizontal-min-width - (2 * $bottom-nav-action-horizontal-padding);
     }
   }
 }
