@@ -61,23 +61,10 @@ $bottom-nav-box-shadow: (
       left: $bottom-nav-action-horizontal-padding;
     }
 
-    @if $hide-inactive-labels {
-      padding: {
-        top: 2 * $bottom-nav-action-vertical-padding;
-        bottom: 2 * $bottom-nav-action-vertical-padding;
-      }
+    padding: $bottom-nav-action-vertical-padding $bottom-nav-action-horizontal-padding;
 
-      min-width: $bottom-nav-action-min-width - (4 * $bottom-nav-action-horizontal-padding);
-      max-width: $bottom-nav-action-max-width - (8 * $bottom-nav-action-horizontal-padding);
-    } @else {
-      padding: {
-        top: $bottom-nav-action-vertical-padding;
-        bottom: $bottom-nav-action-vertical-padding;
-      }
-
-      min-width: $bottom-nav-action-min-width - (2 * $bottom-nav-action-horizontal-padding);
-      max-width: $bottom-nav-action-max-width - (2 * $bottom-nav-action-horizontal-padding);
-    }
+    min-width: $bottom-nav-action-min-width - (2 * $bottom-nav-action-horizontal-padding);
+    max-width: $bottom-nav-action-max-width - (2 * $bottom-nav-action-horizontal-padding);
 
     flex-grow: 1;
     flex-shrink: 1;
@@ -91,15 +78,6 @@ $bottom-nav-box-shadow: (
     &--active {
       padding-top: $bottom-nav-action-vertical-padding - 2px;
       color: $active-color;
-
-      @if $hide-inactive-labels {
-        padding: {
-          bottom: $bottom-nav-action-vertical-padding;
-        }
-
-        min-width: $bottom-nav-action-min-width - (2 * $bottom-nav-action-horizontal-padding);
-        max-width: $bottom-nav-action-max-width - (2 * $bottom-nav-action-horizontal-padding);
-      }
     }
   }
 
@@ -112,10 +90,7 @@ $bottom-nav-box-shadow: (
     margin: {
       left: auto;
       right: auto;
-    }
-
-    @if $hide-inactive-labels == false {
-      margin-bottom: $bottom-nav-icon-margin-bottom;
+      bottom: $bottom-nav-icon-margin-bottom;
     }
 
     path,
@@ -130,30 +105,49 @@ $bottom-nav-box-shadow: (
     }
   }
 
-  &__action--active &__icon {
-    @if $hide-inactive-labels {
-      margin-bottom: $bottom-nav-icon-margin-bottom;
-    }
-  }
-
   &__label {
+    display: block;
+    font-size: $bottom-nav-label-font-size-inactive;
     font-weight: 400;
     line-height: 1;
     text-align: center;
     white-space: nowrap;
-
-    @if $hide-inactive-labels {
-      display: none;
-    } @else {
-      display: block;
-      font-size: $bottom-nav-label-font-size-inactive;
-    }
   }
 
   &__action--active &__label {
     font-size: $bottom-nav-label-font-size-active;
+  }
 
-    @if $hide-inactive-labels {
+  @if $hide-inactive-labels {
+    &__action {
+      padding-top: 2 * $bottom-nav-action-vertical-padding;
+      padding-bottom: 2 * $bottom-nav-action-vertical-padding;
+
+      min-width: $bottom-nav-action-min-width - (4 * $bottom-nav-action-horizontal-padding);
+      max-width: $bottom-nav-action-max-width - (8 * $bottom-nav-action-horizontal-padding);
+    }
+
+    &__icon {
+      margin-bottom: 0;
+    }
+
+    &__label {
+      display: none;
+    }
+
+    &__action--active {
+      padding-top: $bottom-nav-action-vertical-padding - 2px;
+      padding-bottom: $bottom-nav-action-vertical-padding;
+
+      min-width: $bottom-nav-action-min-width - (2 * $bottom-nav-action-horizontal-padding);
+      max-width: $bottom-nav-action-max-width - (2 * $bottom-nav-action-horizontal-padding);
+    }
+
+    &__action--active &__icon {
+      margin-bottom: $bottom-nav-icon-margin-bottom;
+    }
+
+    &__action--active &__label {
       display: block;
     }
   }
