@@ -1,6 +1,7 @@
 # material-bottom-nav
 
-[![license][license-badge]][license]
+[![CI Status][ci-badge]][ci]
+[![License][license-badge]][license]
 [![npm version][npm-badge]][npm]
 [![npm downloads][downloads-badge]][downloads]
 [![dependencies status][dependencies-badge]][dependencies]
@@ -299,17 +300,19 @@ This project is available under the terms of the ISC license. See the
 Examples used include icons from the [Material Design Icons][material-icons]
 project ([LICENSE][material-icons-license]).
 
-[license-badge]: https://img.shields.io/github/license/michaelbull/material-bottom-nav.svg?style=flat-square
+[ci-badge]: https://github.com/michaelbull/material-bottom-nav/workflows/ci/badge.svg
+[ci]: https://github.com/michaelbull/material-bottom-nav/actions?query=workflow%3Aci
+[license-badge]: https://img.shields.io/github/license/michaelbull/material-bottom-nav.svg
 [license]: https://github.com/michaelbull/material-bottom-nav/blob/master/LICENSE
-[npm-badge]: https://img.shields.io/npm/v/material-bottom-nav.svg?style=flat-square
+[npm-badge]: https://img.shields.io/npm/v/material-bottom-nav.svg
 [npm]: https://www.npmjs.com/package/material-bottom-nav
-[downloads-badge]: https://img.shields.io/npm/dt/material-bottom-nav.svg?style=flat-square
+[downloads-badge]: https://img.shields.io/npm/dt/material-bottom-nav.svg
 [downloads]: https://www.npmjs.com/package/material-bottom-nav
-[dependencies-badge]: https://david-dm.org/michaelbull/material-bottom-nav.svg?style=flat-square
+[dependencies-badge]: https://david-dm.org/michaelbull/material-bottom-nav.svg
 [dependencies]: https://david-dm.org/michaelbull/material-bottom-nav
-[devDependencies-badge]: https://david-dm.org/michaelbull/material-bottom-nav/dev-status.svg?style=flat-square
+[devDependencies-badge]: https://david-dm.org/michaelbull/material-bottom-nav/dev-status.svg
 [devDependencies]: https://david-dm.org/michaelbull/material-bottom-nav?type=dev
-[peerDependencies-badge]: https://david-dm.org/michaelbull/material-bottom-nav/peer-status.svg?style=flat-square
+[peerDependencies-badge]: https://david-dm.org/michaelbull/material-bottom-nav/peer-status.svg
 [peerDependencies]: https://david-dm.org/michaelbull/material-bottom-nav?type=peer
 [spec]: https://material.io/guidelines/components/bottom-navigation.html
 [sass]: http://sass-lang.com/guide
