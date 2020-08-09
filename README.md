@@ -13,7 +13,10 @@ style rules to any class, as shown in the [demo page's stylesheet][demo.scss].
 
 A running demonstration can be found [here][demo].
 
-[![Three actions](/preview-3.png)](https://michaelbull.github.io/material-bottom-nav/) [![Five actions, hidden labels](/preview-5.png)](https://michaelbull.github.io/material-bottom-nav/hidden-labels.html)
+[![Three actions](/img/index.png)](https://michaelbull.github.io/material-bottom-nav/)
+[![Hidden labels](/img/hidden-labels.png)](https://michaelbull.github.io/material-bottom-nav/hidden-labels.html)
+[![Badges](/img/badges.png)](https://michaelbull.github.io/material-bottom-nav/badges.html)
+[![Horizontal](/img/horizontal.png)](https://michaelbull.github.io/material-bottom-nav/horizontal.html)
 
 <br />
 <br />

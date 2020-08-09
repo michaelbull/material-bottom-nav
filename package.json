@@ -23,7 +23,8 @@
     "url": "https://www.michael-bull.com"
   },
   "files": [
-    "bottom-nav.scss"
+    "bottom-nav.scss",
+    "img"
   ],
   "main": "bottom-nav.scss",
   "repository": {
