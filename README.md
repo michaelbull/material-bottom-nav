@@ -79,6 +79,8 @@ The `$hide-inactive-labels` argument defaults to `false`. It is used to hide the
 text label of any inactive actions, as suggested by the
 [style specification][style-spec] if you have more than three actions visible.
 
+[**Demo**](https://michaelbull.github.io/material-bottom-nav/hidden-labels.html)
+
 <details>
 <summary>Style</summary>
 <p>
@@ -150,6 +152,8 @@ text label of any inactive actions, as suggested by the
 Bottom navigation icons can include badges in their upper right corner. These
 badges can contain dynamic information, such as a number of pending requests.
 
+[**Demo**](https://michaelbull.github.io/material-bottom-nav/badges.html)
+
 <details>
 <summary>Style</summary>
 <p>
@@ -216,6 +220,8 @@ badges can contain dynamic information, such as a number of pending requests.
 
 On mobile (in landscape mode) or tablet, bottom navigation destinations can be
 positioned horizontally instead of stacked.
+
+[**Demo**](https://michaelbull.github.io/material-bottom-nav/horizontal.html)
 
 <details>
 <summary>Style</summary>
