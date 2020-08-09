@@ -59,6 +59,8 @@ $bottom-nav-box-shadow: (
   }
 
   &__action {
+    flex: 1 1 0;
+
     position: relative;
 
     display: flex;
@@ -71,8 +73,6 @@ $bottom-nav-box-shadow: (
     min-width: $bottom-nav-action-min-width - (2 * $bottom-nav-action-horizontal-padding);
     max-width: $bottom-nav-action-max-width - (2 * $bottom-nav-action-horizontal-padding);
 
-    flex-grow: 1;
-    flex-shrink: 1;
     color: $inactive-color;
     text-decoration: none;
 
