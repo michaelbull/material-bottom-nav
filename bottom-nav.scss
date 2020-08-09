@@ -77,7 +77,8 @@ $bottom-nav-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
       max-width: $bottom-nav-action-max-width - (2 * $bottom-nav-action-horizontal-padding);
     }
 
-    flex: 1 1 auto;
+    flex-grow: 1;
+    flex-shrink: 1;
     color: $inactive-color;
     text-decoration: none;
 
