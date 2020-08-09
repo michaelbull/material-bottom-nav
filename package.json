@@ -36,7 +36,9 @@
     "start": "webpack-dev-server --config webpack.dev.js --inline --hot --open",
     "prebuild": "npm run clean",
     "build": "webpack --config webpack.prod.js ",
-    "deploy": "npm run build && push-dir --dir=dist --branch=gh-pages"
+    "predeploy": "npm run build",
+    "deploy": "push-dir --dir=dist --branch=gh-pages",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "css-loader": "4.2.1",
