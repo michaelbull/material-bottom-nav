@@ -73,15 +73,11 @@ Structure your template:
 </nav>
 ```
 
-[![Three actions](/img/index.png)](https://michaelbull.github.io/material-bottom-nav/)
-
-### Hiding inactive labels
+## Hiding inactive labels
 
 The `$hide-inactive-labels` argument defaults to `false`. It is used to hide the
 text label of any inactive actions, as suggested by the
 [style specification][style-spec] if you have more than three actions visible.
-
-[![Hidden labels](/img/hidden-labels.png)](https://michaelbull.github.io/material-bottom-nav/hidden-labels.html)
 
 <details>
 <summary>Style</summary>
@@ -145,12 +141,12 @@ text label of any inactive actions, as suggested by the
 </p>
 </details>
 
-### Badges
+[![Hidden labels](/img/hidden-labels.png)](https://michaelbull.github.io/material-bottom-nav/hidden-labels.html)
+
+## Badges
 
 Bottom navigation icons can include badges in their upper right corner. These
 badges can contain dynamic information, such as a number of pending requests.
-
-[![Badges](/img/badges.png)](https://michaelbull.github.io/material-bottom-nav/badges.html)
 
 <details>
 <summary>Style</summary>
@@ -210,12 +206,12 @@ badges can contain dynamic information, such as a number of pending requests.
 </p>
 </details>
 
-### Horizontal
+[![Badges](/img/badges.png)](https://michaelbull.github.io/material-bottom-nav/badges.html)
+
+## Horizontal
 
 On mobile (in landscape mode) or tablet, bottom navigation destinations can be
 positioned horizontally instead of stacked.
-
-[![Horizontal](/img/horizontal.png)](https://michaelbull.github.io/material-bottom-nav/horizontal.html)
 
 <details>
 <summary>Style</summary>
@@ -272,6 +268,8 @@ positioned horizontally instead of stacked.
 ```
 </p>
 </details>
+
+[![Horizontal](/img/horizontal.png)](https://michaelbull.github.io/material-bottom-nav/horizontal.html)
 
 ## Customization
 
