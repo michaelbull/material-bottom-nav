@@ -53,6 +53,14 @@ $bottom-nav-box-shadow: (
 
   -webkit-tap-highlight-color: transparent;
 
+  box-sizing: border-box;
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
   @media print {
     display: none;
   }
@@ -67,21 +75,19 @@ $bottom-nav-box-shadow: (
     justify-content: center;
     align-items: center;
 
-    padding: $bottom-nav-action-vertical-padding $bottom-nav-action-horizontal-padding;
-
-    min-width: $bottom-nav-action-min-width - (2 * $bottom-nav-action-horizontal-padding);
-    max-width: $bottom-nav-action-max-width - (2 * $bottom-nav-action-horizontal-padding);
+    padding-right: $bottom-nav-action-horizontal-padding;
+    padding-left: $bottom-nav-action-horizontal-padding;
 
     color: $inactive-color;
     text-decoration: none;
 
-    &--active {
-      color: $active-color;
-    }
-
     &:focus {
       outline: 0;
     }
+  }
+
+  &__action--active {
+    color: $active-color;
   }
 
   &__icon {
@@ -111,8 +117,6 @@ $bottom-nav-box-shadow: (
   &__label {
     flex: 0 0 auto;
 
-    display: block;
-
     margin-top: 4px;
 
     font-size: $bottom-nav-label-font-size;
@@ -129,13 +133,12 @@ $bottom-nav-box-shadow: (
     align-items: center;
 
     position: absolute;
-    top: 6px;
     left: calc(50% + 6px);
 
     padding: 2px;
 
-    min-width: 5px;
-    min-height: 5px;
+    min-width: 9px;
+    min-height: 9px;
 
     font-size: $bottom-nav-badge-font-size;
     font-weight: 500;
@@ -153,31 +156,55 @@ $bottom-nav-box-shadow: (
       padding-top: 2 * $bottom-nav-action-vertical-padding;
       padding-bottom: 2 * $bottom-nav-action-vertical-padding;
 
-      min-width: $bottom-nav-action-min-width - (4 * $bottom-nav-action-horizontal-padding);
-      max-width: $bottom-nav-action-max-width - (8 * $bottom-nav-action-horizontal-padding);
-    }
-
-    &__label {
-      display: none;
-    }
-
-    &__badge {
-      top: 14px;
+      min-width: $bottom-nav-action-min-width - (2 * $bottom-nav-action-horizontal-padding);
+      max-width: $bottom-nav-action-max-width - (6 * $bottom-nav-action-horizontal-padding);
     }
 
     &__action--active {
       padding-top: $bottom-nav-action-vertical-padding;
       padding-bottom: $bottom-nav-action-vertical-padding;
 
-      min-width: $bottom-nav-action-min-width - (2 * $bottom-nav-action-horizontal-padding);
-      max-width: $bottom-nav-action-max-width - (2 * $bottom-nav-action-horizontal-padding);
+      min-width: $bottom-nav-action-min-width;
+      max-width: $bottom-nav-action-max-width;
+    }
+
+    &__label {
+      display: none;
     }
 
     &__action--active &__label {
       display: block;
     }
 
+    &__badge {
+      top: 14px;
+    }
+
     &__action--active &__label + &__badge {
+      top: 6px;
+    }
+  } @else {
+    &__action {
+      padding-top: $bottom-nav-action-vertical-padding;
+      padding-bottom: $bottom-nav-action-vertical-padding;
+
+      min-width: $bottom-nav-action-min-width;
+      max-width: $bottom-nav-action-max-width;
+    }
+
+    &__action--active {
+      padding-top: $bottom-nav-action-vertical-padding;
+      padding-bottom: $bottom-nav-action-vertical-padding;
+
+      min-width: $bottom-nav-action-min-width;
+      max-width: $bottom-nav-action-max-width;
+    }
+
+    &__label {
+      display: block;
+    }
+
+    &__badge {
       top: 6px;
     }
   }
@@ -189,8 +216,11 @@ $bottom-nav-box-shadow: (
 
     padding-top: 2 * $bottom-nav-action-vertical-padding;
     padding-bottom: 2 * $bottom-nav-action-vertical-padding;
+  }
 
-    min-width: $bottom-nav-action-horizontal-min-width - (2 * $bottom-nav-action-horizontal-padding);
+  &__action--active {
+    padding-top: 2 * $bottom-nav-action-vertical-padding;
+    padding-bottom: 2 * $bottom-nav-action-vertical-padding;
   }
 
   &__icon {
@@ -208,11 +238,47 @@ $bottom-nav-box-shadow: (
 
   @if $hide-inactive-labels {
     &__action {
-      min-width: $bottom-nav-action-min-width - (4 * $bottom-nav-action-horizontal-padding);
+      min-width: $bottom-nav-action-min-width - (2 * $bottom-nav-action-horizontal-padding);
+      max-width: $bottom-nav-action-max-width - (6 * $bottom-nav-action-horizontal-padding);
     }
 
     &__action--active {
-      min-width: $bottom-nav-action-horizontal-min-width - (2 * $bottom-nav-action-horizontal-padding);
+      min-width: $bottom-nav-action-horizontal-min-width;
+      max-width: $bottom-nav-action-max-width;
+    }
+
+    &__label {
+      display: none;
+    }
+
+    &__action--active &__label {
+      display: block;
+    }
+
+    &__badge {
+      top: 14px;
+    }
+
+    &__action--active &__label + &__badge {
+      top: 6px;
+    }
+  } @else {
+    &__action {
+      min-width: $bottom-nav-action-horizontal-min-width;
+      max-width: $bottom-nav-action-max-width;
+    }
+
+    &__action--active {
+      min-width: $bottom-nav-action-horizontal-min-width;
+      max-width: $bottom-nav-action-max-width;
+    }
+
+    &__label {
+      display: block;
+    }
+
+    &__badge {
+      top: 6px;
     }
   }
 }
