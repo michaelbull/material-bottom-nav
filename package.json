@@ -41,22 +41,22 @@
     "prepublish": "npm run build"
   },
   "devDependencies": {
-    "css-loader": "4.2.1",
+    "css-loader": "4.2.2",
     "cssnano": "4.1.10",
     "cssnano-preset-advanced": "4.0.7",
     "handlebars": "4.7.6",
     "handlebars-loader": "1.7.1",
-    "html-webpack-plugin": "4.3.0",
-    "mini-css-extract-plugin": "0.9.0",
+    "html-webpack-plugin": "4.4.1",
+    "mini-css-extract-plugin": "0.11.0",
     "postcss-loader": "3.0.0",
     "push-dir": "0.4.1",
     "rimraf": "3.0.2",
     "sass": "1.26.10",
-    "sass-loader": "9.0.3",
+    "sass-loader": "10.0.1",
     "style-loader": "1.2.1",
     "webpack": "4.44.1",
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "3.11.0",
-    "webpack-merge": "5.1.1"
+    "webpack-merge": "5.1.3"
   }
 }
