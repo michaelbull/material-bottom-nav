@@ -22,7 +22,7 @@ body {
   letter-spacing: normal;
   line-height: 1.75;
 
-  color: rgba(0, 0, 0, 0.87);
+  color: #424242;
 
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -31,41 +31,58 @@ body {
 
 main {
   max-width: 600px;
-  margin: 6em auto;
+  margin: 0 auto 20rem;
 
   padding: {
-    left: 1em;
-    right: 1em;
+    left: 1rem;
+    right: 1rem;
   }
 }
 
-h1, h2, .subtitle {
-  margin: {
-    top: 2em;
-    right: 0;
-    bottom: 0.3em;
-    left: -0.07em;
-  }
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding-top: 1.5em;
 
   font-weight: 400;
-  letter-spacing: 0.02em;
-  line-height: 1;
+  line-height: 1.2;
+
+  color: #212121;
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 3.75rem;
 }
 
-.subtitle {
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
   font-size: 1.5rem;
-  line-height: 1.2;
 }
 
-p, ol, ul, .subtitle {
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.125rem;
+}
+
+
+h6 {
+  font-size: 1rem;
+}
+
+p, ol, ul {
   margin: {
-    top: 0;
-    bottom: 1.5rem;
+    top: 1em;
+    bottom: 1em;
   }
+}
+
+ol, ul {
+  padding-left: 20px;
 }
 
 strong {
@@ -105,7 +122,7 @@ strong {
     $inactive-color: $purple-200
   );
 
-  @media (min-width: $bottom-nav-action-horizontal-min-width * 4) {
+  @media (min-width: $bottom-nav-destination-horizontal-min-width * 4) {
     @include bottom-nav-horizontal();
   }
 }
