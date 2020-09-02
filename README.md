@@ -76,9 +76,8 @@ Structure your template:
 ## Hiding inactive labels
 
 The `$hide-inactive-labels` argument defaults to `false`. It is used to hide the
-text label of any inactive destinations, as suggested by the
-[style specification][style-spec] if you have more than three destinations
-visible.
+text label of any inactive destinations as described in the
+[anatomy][spec-anatomy] section of the official spec.
 
 [**Demo**](https://michaelbull.github.io/material-bottom-nav/hidden-labels.html)
 
@@ -321,12 +320,12 @@ project ([LICENSE][material-icons-license]).
 [devDependencies]: https://david-dm.org/michaelbull/material-bottom-nav?type=dev
 [peerDependencies-badge]: https://david-dm.org/michaelbull/material-bottom-nav/peer-status.svg
 [peerDependencies]: https://david-dm.org/michaelbull/material-bottom-nav?type=peer
-[spec]: https://material.io/guidelines/components/bottom-navigation.html
+[spec]: https://material.io/components/bottom-navigation
+[spec-anatomy]: https://material.io/components/bottom-navigation#anatomy
 [sass]: http://sass-lang.com/guide
 [demo.scss]: https://github.com/michaelbull/material-bottom-nav/blob/master/demo/index.scss#L72
 [demo]: https://michaelbull.github.io/material-bottom-nav/
 [mixin]: https://github.com/michaelbull/material-bottom-nav/blob/master/bottom-nav.scss#
-[style-spec]: https://material.io/guidelines/components/bottom-navigation.html#bottom-navigation-style
 [svg]: https://developer.mozilla.org/en-US/docs/Web/SVG
 [material-icons]: https://materialdesignicons.com/
 [material-icons-license]: https://github.com/Templarian/MaterialDesign/blob/master/license.txt
