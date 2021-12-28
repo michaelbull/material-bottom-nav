@@ -1,4 +1,4 @@
-@import '../bottom-nav';
+@use '../bottom-nav';
 
 $grey-300: #E0E0E0;
 $grey-600: #757575;
@@ -90,7 +90,7 @@ strong {
 }
 
 .bottom-nav {
-  @include bottom-nav(
+  @include bottom-nav.root(
     $background-color: $white,
     $active-color: $red-500,
     $inactive-color: $grey-600
@@ -98,7 +98,7 @@ strong {
 }
 
 .hidden-labels-nav {
-  @include bottom-nav(
+  @include bottom-nav.root(
     $background-color: $teal-500,
     $active-color: $white,
     $inactive-color: $grey-300,
@@ -107,7 +107,7 @@ strong {
 }
 
 .badges-nav {
-  @include bottom-nav(
+  @include bottom-nav.root(
     $background-color: $white,
     $active-color: $purple-500,
     $inactive-color: $grey-600,
@@ -116,13 +116,13 @@ strong {
 }
 
 .horizontal-nav {
-  @include bottom-nav(
+  @include bottom-nav.root(
     $background-color: $purple-500,
     $active-color: $white,
     $inactive-color: $purple-200
   );
 
-  @media (min-width: $bottom-nav-destination-horizontal-min-width * 4) {
-    @include bottom-nav-horizontal();
+  @media (min-width: bottom-nav.$destination-horizontal-min-width * 4) {
+    @include bottom-nav.horizontal();
   }
 }

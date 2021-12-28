@@ -40,6 +40,8 @@ module.exports = {
     ],
 
     devServer: {
-        stats: 'errors-only'
+        devMiddleware: {
+            stats: 'minimal'
+        }
     }
 };

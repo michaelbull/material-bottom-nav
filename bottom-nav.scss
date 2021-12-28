@@ -1,16 +1,16 @@
-$bottom-nav-z-index: 1000 !default;
-$bottom-nav-border-color: hsl(0, 0%, 88%) !default;
+$z-index: 1000 !default;
+$border-color: hsl(0, 0%, 88%) !default;
 
-$bottom-nav-icon-font-size: 24px !default;
+$icon-font-size: 24px !default;
 
-$bottom-nav-destination-min-width: 80px !default;
-$bottom-nav-destination-max-width: 168px !default;
-$bottom-nav-destination-horizontal-padding: 12px !default;
-$bottom-nav-destination-vertical-padding: 8px !default;
-$bottom-nav-destination-horizontal-min-width: $bottom-nav-destination-min-width + $bottom-nav-icon-font-size + (2 * $bottom-nav-destination-horizontal-padding) !default;
+$destination-min-width: 80px !default;
+$destination-max-width: 168px !default;
+$destination-horizontal-padding: 12px !default;
+$destination-vertical-padding: 8px !default;
+$destination-horizontal-min-width: $destination-min-width + $icon-font-size + (2 * $destination-horizontal-padding) !default;
 
-$bottom-nav-label-font-size: 12px !default;
-$bottom-nav-label-font-family: (
+$label-font-size: 12px !default;
+$label-font-family: (
   -apple-system, // iOS
   BlinkMacSystemFont, // macOS
   Segoe UI, // Windows
@@ -24,18 +24,18 @@ $bottom-nav-label-font-family: (
   sans-serif
 ) !default;
 
-$bottom-nav-badge-font-size: 10px !default;
-$bottom-nav-badge-color: white !default;
-$bottom-nav-badge-background-color: hsl(348, 100%, 52%) !default;
+$badge-font-size: 10px !default;
+$badge-color: white !default;
+$badge-background-color: hsl(348, 100%, 52%) !default;
 
 // 8dp elevation
-$bottom-nav-box-shadow: (
+$box-shadow: (
   0 5px 5px -3px rgba(0, 0, 0, 0.2),
   0 8px 10px 1px rgba(0, 0, 0, 0.14),
   0 3px 14px 2px rgba(0, 0, 0, 0.12)
 ) !default;
 
-@mixin bottom-nav($background-color, $active-color, $inactive-color, $hide-inactive-labels: false) {
+@mixin root($background-color, $active-color, $inactive-color, $hide-inactive-labels: false) {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,11 +45,11 @@ $bottom-nav-box-shadow: (
   left: 0;
   right: 0;
 
-  font-family: $bottom-nav-label-font-family;
-  box-shadow: $bottom-nav-box-shadow;
-  border-top: 1px solid $bottom-nav-border-color;
+  font-family: $label-font-family;
+  box-shadow: $box-shadow;
+  border-top: 1px solid $border-color;
   background-color: $background-color;
-  z-index: $bottom-nav-z-index;
+  z-index: $z-index;
 
   -webkit-tap-highlight-color: transparent;
 
@@ -75,8 +75,8 @@ $bottom-nav-box-shadow: (
     justify-content: center;
     align-items: center;
 
-    padding-right: $bottom-nav-destination-horizontal-padding;
-    padding-left: $bottom-nav-destination-horizontal-padding;
+    padding-right: $destination-horizontal-padding;
+    padding-left: $destination-horizontal-padding;
 
     color: $inactive-color;
     text-decoration: none;
@@ -100,7 +100,7 @@ $bottom-nav-box-shadow: (
     margin-left: auto;
     margin-right: auto;
 
-    font-size: $bottom-nav-icon-font-size;
+    font-size: $icon-font-size;
 
     path,
     polygon,
@@ -119,7 +119,7 @@ $bottom-nav-box-shadow: (
 
     margin-top: 4px;
 
-    font-size: $bottom-nav-label-font-size;
+    font-size: $label-font-size;
     font-weight: 400;
     line-height: 1;
 
@@ -140,32 +140,32 @@ $bottom-nav-box-shadow: (
     min-width: 9px;
     min-height: 9px;
 
-    font-size: $bottom-nav-badge-font-size;
+    font-size: $badge-font-size;
     font-weight: 500;
     line-height: 1;
     text-align: center;
     white-space: nowrap;
 
-    color: $bottom-nav-badge-color;
-    background-color: $bottom-nav-badge-background-color;
+    color: $badge-color;
+    background-color: $badge-background-color;
     border-radius: 9999px;
   }
 
   @if $hide-inactive-labels {
     &__destination {
-      padding-top: 2 * $bottom-nav-destination-vertical-padding;
-      padding-bottom: 2 * $bottom-nav-destination-vertical-padding;
+      padding-top: 2 * $destination-vertical-padding;
+      padding-bottom: 2 * $destination-vertical-padding;
 
-      min-width: $bottom-nav-destination-min-width - (2 * $bottom-nav-destination-horizontal-padding);
-      max-width: $bottom-nav-destination-max-width - (6 * $bottom-nav-destination-horizontal-padding);
+      min-width: $destination-min-width - (2 * $destination-horizontal-padding);
+      max-width: $destination-max-width - (6 * $destination-horizontal-padding);
     }
 
     &__destination--active {
-      padding-top: $bottom-nav-destination-vertical-padding;
-      padding-bottom: $bottom-nav-destination-vertical-padding;
+      padding-top: $destination-vertical-padding;
+      padding-bottom: $destination-vertical-padding;
 
-      min-width: $bottom-nav-destination-min-width;
-      max-width: $bottom-nav-destination-max-width;
+      min-width: $destination-min-width;
+      max-width: $destination-max-width;
     }
 
     &__label {
@@ -185,19 +185,19 @@ $bottom-nav-box-shadow: (
     }
   } @else {
     &__destination {
-      padding-top: $bottom-nav-destination-vertical-padding;
-      padding-bottom: $bottom-nav-destination-vertical-padding;
+      padding-top: $destination-vertical-padding;
+      padding-bottom: $destination-vertical-padding;
 
-      min-width: $bottom-nav-destination-min-width;
-      max-width: $bottom-nav-destination-max-width;
+      min-width: $destination-min-width;
+      max-width: $destination-max-width;
     }
 
     &__destination--active {
-      padding-top: $bottom-nav-destination-vertical-padding;
-      padding-bottom: $bottom-nav-destination-vertical-padding;
+      padding-top: $destination-vertical-padding;
+      padding-bottom: $destination-vertical-padding;
 
-      min-width: $bottom-nav-destination-min-width;
-      max-width: $bottom-nav-destination-max-width;
+      min-width: $destination-min-width;
+      max-width: $destination-max-width;
     }
 
     &__label {
@@ -210,17 +210,17 @@ $bottom-nav-box-shadow: (
   }
 }
 
-@mixin bottom-nav-horizontal($hide-inactive-labels: false) {
+@mixin horizontal($hide-inactive-labels: false) {
   &__destination {
     flex-direction: row;
 
-    padding-top: 2 * $bottom-nav-destination-vertical-padding;
-    padding-bottom: 2 * $bottom-nav-destination-vertical-padding;
+    padding-top: 2 * $destination-vertical-padding;
+    padding-bottom: 2 * $destination-vertical-padding;
   }
 
   &__destination--active {
-    padding-top: 2 * $bottom-nav-destination-vertical-padding;
-    padding-bottom: 2 * $bottom-nav-destination-vertical-padding;
+    padding-top: 2 * $destination-vertical-padding;
+    padding-bottom: 2 * $destination-vertical-padding;
   }
 
   &__icon {
@@ -232,19 +232,19 @@ $bottom-nav-box-shadow: (
 
   &__label {
     margin-top: 2px;
-    margin-left: $bottom-nav-destination-horizontal-padding;
-    margin-right: $bottom-nav-destination-horizontal-padding;
+    margin-left: $destination-horizontal-padding;
+    margin-right: $destination-horizontal-padding;
   }
 
   @if $hide-inactive-labels {
     &__destination {
-      min-width: $bottom-nav-destination-min-width - (2 * $bottom-nav-destination-horizontal-padding);
-      max-width: $bottom-nav-destination-max-width - (6 * $bottom-nav-destination-horizontal-padding);
+      min-width: $destination-min-width - (2 * $destination-horizontal-padding);
+      max-width: $destination-max-width - (6 * $destination-horizontal-padding);
     }
 
     &__destination--active {
-      min-width: $bottom-nav-destination-horizontal-min-width;
-      max-width: $bottom-nav-destination-max-width;
+      min-width: $destination-horizontal-min-width;
+      max-width: $destination-max-width;
     }
 
     &__label {
@@ -264,13 +264,13 @@ $bottom-nav-box-shadow: (
     }
   } @else {
     &__destination {
-      min-width: $bottom-nav-destination-horizontal-min-width;
-      max-width: $bottom-nav-destination-max-width;
+      min-width: $destination-horizontal-min-width;
+      max-width: $destination-max-width;
     }
 
     &__destination--active {
-      min-width: $bottom-nav-destination-horizontal-min-width;
-      max-width: $bottom-nav-destination-max-width;
+      min-width: $destination-horizontal-min-width;
+      max-width: $destination-max-width;
     }
 
     &__label {

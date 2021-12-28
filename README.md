@@ -26,19 +26,15 @@ Install the package via npm:
 npm install --save material-bottom-nav
 ```
 
-Then import the [Sass mixin][mixin]:
-
-```scss
-@import '~material-bottom-nav';
-```
-
 ## Usage
 
 Apply the mixin to a class:
 
 ```scss
+@use '~material-bottom-nav' as bottom-nav;
+
 .bottom-nav {
-  @include bottom-nav(
+  @include bottom-nav.root(
     $background-color: #009688,
     $active-color: #FFFFFF,
     $inactive-color: #E0E0E0
@@ -86,8 +82,10 @@ text label of any inactive destinations as described in the
 <p>
 
 ```scss
+@use '~material-bottom-nav' as bottom-nav;
+
 .hidden-labels-nav {
-  @include bottom-nav(
+  @include bottom-nav.root(
     $background-color: #009688,
     $active-color: #FFFFFF,
     $inactive-color: #E0E0E0,
@@ -159,12 +157,14 @@ badges can contain dynamic information, such as a number of pending requests.
 <p>
 
 ```scss
+@use '~material-bottom-nav' as bottom-nav;
+
 .badges-nav {
-  @include bottom-nav(
-      $background-color: white,
-      $active-color: #6200EE,
-      $inactive-color: #757575,
-      $hide-inactive-labels: true
+  @include bottom-nav.root(
+    $background-color: white,
+    $active-color: #6200EE,
+    $inactive-color: #757575,
+    $hide-inactive-labels: true
   );
 }
 ```
@@ -228,14 +228,16 @@ positioned horizontally instead of stacked.
 <p>
 
 ```scss
+@use '~material-bottom-nav' as bottom-nav;
+
 .horizontal-nav {
-  @include bottom-nav(
-      $background-color: #6200EE,
-      $active-color: white,
-      $inactive-color: #BB86FC
+  @include bottom-nav.root(
+    $background-color: #6200EE,
+    $active-color: white,
+    $inactive-color: #BB86FC
   );
 
-  @include bottom-nav-horizontal();
+  @include bottom-nav.horizontal();
 }
 ```
 </p>
@@ -278,19 +280,18 @@ positioned horizontally instead of stacked.
 
 ## Customization
 
-The box-model and colors of the individual styles within this component can be
-configured by overriding the default variable values defined in
-[`bottom-nav.scss`][mixin]. Remember to define your overrides **before**
-importing the mixin file, for example:
+The box-model and colors of the individual styles within this component can be configured by overriding the default
+variable values defined in
+[`bottom-nav.scss`][mixin].
 
 ```scss
-$bottom-nav-destination-horizontal-padding: 4px; // reduce the horizontal padding within each destination
-$bottom-nav-icon-font-size: 28px; // increase the icon size
-
-@import '~material-bottom-nav';
+@use '~material-bottom-nav' as bottom-nav with (
+  $destination-horizontal-padding: 4px, // reduce the horizontal padding within each destination
+  $icon-font-size: 28px, // increase the icon size
+);
 
 .bottom-nav {
-  @include bottom-nav(#009688, #FFFFFF, #E0E0E0);
+  @include bottom-nav.root(#009688, #FFFFFF, #E0E0E0);
 }
 ```
 
